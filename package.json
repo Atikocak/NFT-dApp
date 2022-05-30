@@ -9,12 +9,53 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.4",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "@alch/alchemy-web3": "^1.4.2",
+    "@coinbase/wallet-sdk": "^3.1.0",
+    "@headlessui/react": "^1.6.1",
+    "@heroicons/react": "^1.0.6",
+    "@nomiclabs/hardhat-ethers": "^2.0.6",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.6.0",
+    "@walletconnect/web3-provider": "^1.7.8",
+    "@web3-onboard/coinbase": "^2.0.2",
+    "@web3-onboard/core": "^2.2.8",
+    "@web3-onboard/fortmatic": "^2.0.2",
+    "@web3-onboard/injected-wallets": "^2.0.6",
+    "@web3-onboard/ledger": "^2.0.4",
+    "@web3-onboard/react": "^2.1.6",
+    "@web3-onboard/trezor": "^2.0.5",
+    "@web3-onboard/walletconnect": "^2.0.1",
+    "assert": "^2.0.0",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.1",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.6",
+    "flowbite": "^1.4.7",
+    "flowbite-react": "^0.0.25",
+    "fortmatic": "^2.3.0",
+    "hardhat": "^2.9.5",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.31",
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "solc": "^0.8.9",
+    "web3modal": "^1.9.7"
   },
   "devDependencies": {
-    "eslint": "8.13.0",
-    "eslint-config-next": "12.1.4"
-  }
+    "autoprefixer": "^10.4.7",
+    "erc721psi": "^0.6.0",
+    "eslint": "^8.15.0",
+    "eslint-config-next": "^12.1.6",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24"
+  },
+  "description": "This is MyBored Ape NFT project which has web3 integrated dApp and smart contracts ready to use.",
+  "main": "dapp.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "MIT"
 }
