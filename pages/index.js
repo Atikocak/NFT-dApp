@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import About from "../components/about"
@@ -9,7 +8,6 @@ import Info from "../components/info"
 import Roadmap from "../components/roadmap"
 import Socials from "../components/socials"
 import Team from "../components/team"
-import { config } from "../dapp.config"
 
 export default function Home() {
   const [clientWindowHeight, setClientWindowHeight] = useState(0)
@@ -25,11 +23,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen h-full w-full flex flex-col bg-brand-light overflow-hidden">
-      <Head>
-        <title>{config.title}</title>
-        <meta name="description" content={config.description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Banner />
       <Info />
       <Socials />
