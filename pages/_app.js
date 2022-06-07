@@ -1,4 +1,5 @@
 import { MoralisProvider } from "react-moralis"
+
 import Layout from "../components/layout"
 import "../styles/globals.css"
 

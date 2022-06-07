@@ -2,6 +2,7 @@ import { Popover, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 import { Fragment, useEffect, useState } from "react"
+
 import ConnectWallet from "../utils/web3modal"
 
 export default function Navbar() {
@@ -23,7 +24,7 @@ export default function Navbar() {
       } fixed shadow-md min-w-full bg-brand-background text-gray-800 py-2 px-4 md:px-0 transition-all duration-200`}
     >
       <Popover className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6">
           <div
             className={` ${
               clientWindowHeight > 40 ? "py-2" : "py-6"
@@ -40,7 +41,7 @@ export default function Navbar() {
                   } font-varela font-bold text-xl text-brand-light hover:text-brand-violet transition-all duration-200`}
                 >
                   My
-                  <span className="bg-gradient-to-r from-brand-light to-brand-violet pr-2 bg-clip-text text-transparent">
+                  <span className="pr-2 text-transparent bg-gradient-to-r from-brand-light to-brand-violet bg-clip-text">
                     Bored
                   </span>
                   Ape
@@ -48,16 +49,16 @@ export default function Navbar() {
               </Link>
             </div>
             {/* Popover List Button */}
-            <div className="-mr-2 -my-2 md:hidden">
-              <Popover.Button className="bg-brand-background rounded-md p-2 inline-flex text-brand-light hover:text-brand-violet focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <div className="-my-2 -mr-2 md:hidden">
+              <Popover.Button className="inline-flex p-2 rounded-md bg-brand-background text-brand-light hover:text-brand-violet focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                 <span className="sr-only">Open menu</span>
-                <MenuIcon className="h-6 w-6 mt-1" aria-hidden="true" />
+                <MenuIcon className="w-6 h-6 mt-1" aria-hidden="true" />
               </Popover.Button>
             </div>
             {/* Navigation Items */}
             <Popover.Group
               as="nav"
-              className="hidden items-center md:flex space-x-10"
+              className="items-center hidden space-x-10 md:flex"
             >
               <Link
                 href="#roadmap"
@@ -214,7 +215,7 @@ export default function Navbar() {
               </ul>
             </Popover.Group>
             {/* Connect Wallet Button */}
-            <div className="hidden md:flex justify-end md:flex-1 lg:w-0">
+            <div className="justify-end hidden md:flex md:flex-1 lg:w-0">
               <ConnectWallet />
             </div>
           </div>
@@ -232,17 +233,17 @@ export default function Navbar() {
           {/* Popover Panel Items */}
           <Popover.Panel
             focus
-            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+            className="absolute inset-x-0 top-0 p-2 transition origin-top-right transform md:hidden"
           >
             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-brand-background">
-              <div className="pt-5 pb-6 px-5">
+              <div className="px-5 pt-5 pb-6">
                 <div className="flex items-center justify-between">
                   {/* Logo */}
                   <div className="">
                     <Link href="/" passHref>
-                      <a className="font-varela font-bold text-xl text-brand-light hover:text-brand-violet transition-all duration-200">
+                      <a className="text-xl font-bold transition-all duration-200 font-varela text-brand-light hover:text-brand-violet">
                         My
-                        <span className="bg-gradient-to-r from-brand-light to-brand-violet pr-2 bg-clip-text text-transparent">
+                        <span className="pr-2 text-transparent bg-gradient-to-r from-brand-light to-brand-violet bg-clip-text">
                           Bored
                         </span>
                         Ape
@@ -251,14 +252,14 @@ export default function Navbar() {
                   </div>
                   {/* Exit Button */}
                   <div className="-mr-2">
-                    <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-brand-light hover:text-brand-violet focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-brand-light hover:text-brand-violet focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                       <span className="sr-only">Close menu</span>
-                      <XIcon className="h-6 w-6" aria-hidden="true" />
+                      <XIcon className="w-6 h-6" aria-hidden="true" />
                     </Popover.Button>
                   </div>
                 </div>
               </div>
-              <div className="py-6 px-5 space-y-6">
+              <div className="px-5 py-6 space-y-6">
                 {/* Navigation Items */}
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                   <Link
@@ -269,7 +270,7 @@ export default function Navbar() {
                     offset={50}
                     duration={500}
                   >
-                    <a className="font-varela text-base md:text-xl text-brand-light hover:text-brand-violet transition-colors">
+                    <a className="text-base transition-colors font-varela md:text-xl text-brand-light hover:text-brand-violet">
                       Roadmap
                     </a>
                   </Link>
@@ -281,7 +282,7 @@ export default function Navbar() {
                     offset={50}
                     duration={500}
                   >
-                    <a className="font-varela text-base md:text-xl text-brand-light hover:text-brand-violet transition-colors">
+                    <a className="text-base transition-colors font-varela md:text-xl text-brand-light hover:text-brand-violet">
                       About
                     </a>
                   </Link>
@@ -293,7 +294,7 @@ export default function Navbar() {
                     offset={50}
                     duration={500}
                   >
-                    <a className="font-varela text-base md:text-xl text-brand-light hover:text-brand-violet transition-colors">
+                    <a className="text-base transition-colors font-varela md:text-xl text-brand-light hover:text-brand-violet">
                       Team
                     </a>
                   </Link>
@@ -305,14 +306,14 @@ export default function Navbar() {
                     offset={50}
                     duration={500}
                   >
-                    <a className="font-varela text-base md:text-xl text-brand-light hover:text-brand-violet transition-colors">
+                    <a className="text-base transition-colors font-varela md:text-xl text-brand-light hover:text-brand-violet">
                       FAQ
                     </a>
                   </Link>
                 </div>
                 <div>
                   {/* Opensea Twitter Discord Links */}
-                  <ul className="flex justify-start items-center space-x-4 mt-4 md:space-x-6">
+                  <ul className="flex items-center justify-start mt-4 space-x-4 md:space-x-6">
                     <li className="cursor-pointer">
                       {/* Opensea */}
                       <a
@@ -321,7 +322,7 @@ export default function Navbar() {
                         rel="noreferrer"
                       >
                         <svg
-                          className="w-6 h-6 md:w-8 md:h-8 fill-current text-brand-light hover:text-brand-violet transition-colors"
+                          className="w-6 h-6 transition-colors fill-current md:w-8 md:h-8 text-brand-light hover:text-brand-violet"
                           viewBox="0 0 90 90"
                           xmlns="http://www.w3.org/2000/svg"
                         >
@@ -341,7 +342,7 @@ export default function Navbar() {
                         rel="noreferrer"
                       >
                         <svg
-                          className="w-6 h-6 md:w-8 md:h-8 fill-current text-brand-light hover:text-brand-violet transition-colors"
+                          className="w-6 h-6 transition-colors fill-current md:w-8 md:h-8 text-brand-light hover:text-brand-violet"
                           stroke="currentColor"
                           strokeWidth="0"
                           viewBox="0 0 512 512"
@@ -360,7 +361,7 @@ export default function Navbar() {
                         rel="noreferrer"
                       >
                         <svg
-                          className="w-6 h-6 md:w-8 md:h-8 fill-current text-brand-light hover:text-brand-violet transition-colors"
+                          className="w-6 h-6 transition-colors fill-current md:w-8 md:h-8 text-brand-light hover:text-brand-violet"
                           stroke="currentColor"
                           strokeWidth="0"
                           viewBox="0 0 448 512"
@@ -376,7 +377,7 @@ export default function Navbar() {
                   {/* Connect Wallet Button */}
                   <a
                     href="#"
-                    className="w-full flex items-center justify-center mt-2 px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-brand-background bg-brand-light hover:bg-brand-violet"
+                    className="flex items-center justify-center w-full px-4 py-2 mt-2 text-base font-medium border border-transparent rounded-md shadow-sm text-brand-background bg-brand-light hover:bg-brand-violet"
                   >
                     Connect
                   </a>

@@ -8,7 +8,7 @@ const {
   VERIFICATION_BLOCK_CONFIRMATIONS
 } = require("../helper-hardhat-config")
 
-const baseUri = "ipfs://QmXXVTnHmQ57erbksutXRZ7YpArVjr2rSPK3Rf5uHLxzB5/"
+const baseUri = "ipfs://QmXZYx6jmchu5da85bipaMUXRrfTBurd6NrxYRt8Fj7LYe/"
 const proxyRegistryAddressRinkeby = "0xf57b2c51ded3a29e6891aba85459d600256cf317"
 const proxyRegistryAddressMainnet = "0xa5409ec958c83c3f309868babaca7c86dcb077c1"
 const maxSupply = 100

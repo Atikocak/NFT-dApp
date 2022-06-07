@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
+
 import About from "../components/about"
 import Banner from "../components/banner"
 import FAQ from "../components/faq"
@@ -22,7 +23,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen h-full w-full flex flex-col bg-brand-light overflow-hidden">
+    <div className="flex flex-col w-full h-full min-h-screen overflow-hidden bg-brand-light">
       <Banner />
       <Info />
       <Socials />

@@ -3,8 +3,8 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite-react/**/*.{js,ts,jsx,tsx}"
+    "./components/*.{js,ts,jsx,tsx}",
+    "./utils/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     screens: {
@@ -27,7 +27,8 @@ module.exports = {
       fontFamily: {
         varela: ["Varela Round", ...defaultTheme.fontFamily.sans],
         coiny: ["Coiny", ...defaultTheme.fontFamily.sans],
-        open_sans: ["Open Sans", ...defaultTheme.fontFamily.sans]
+        open_sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+        montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans]
       },
       colors: {
         "brand-light": "var(--clr-light)",
@@ -56,7 +57,5 @@ module.exports = {
       }
     }
   },
-  plugins: [
-    // require("flowbite/plugin")
-  ]
+  plugins: []
 }

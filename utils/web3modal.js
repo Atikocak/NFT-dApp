@@ -5,7 +5,8 @@ import { LogoutIcon } from "@heroicons/react/solid"
 import WalletConnectProvider from "@walletconnect/web3-provider"
 import { ethers } from "ethers"
 import Fortmatic from "fortmatic"
-import { Fragment, useEffect, useState } from "react"
+import Link from "next/link"
+import { Fragment, forwardRef, useEffect, useState } from "react"
 import Web3Modal from "web3modal"
 
 const customNetworkOptions = {
@@ -108,17 +109,29 @@ export default function ConnectWallet() {
     return classes.filter(Boolean).join(" ")
   }
 
+  const MyLink = forwardRef((props, ref) => {
+    let { href, children, ...rest } = props
+    return (
+      <Link href={href}>
+        <a ref={ref} {...rest}>
+          {children}
+        </a>
+      </Link>
+    )
+  })
+
   return (
     <div>
       {hasMetamask ? (
         isConnected ? (
           <Menu as="div" className="relative inline-block text-left">
-            <div>
-              <Menu.Button className="ml-8 whitespace-nowrap inline-flex mb-1 px-4 py-2 items-center border border-transparent rounded-md shadow-md font-medium text-brand-background bg-white hover:bg-brand-violet transition-all duration-200">
-                {truncateAddress(signer)}
-                <CogIcon className="-mr-1 ml-2 h-6 w-6" aria-hidden="true" />
-              </Menu.Button>
-            </div>
+            <Menu.Button
+              as="button"
+              className="inline-flex items-center px-4 py-2 mb-1 ml-8 font-medium transition-all duration-200 bg-white border border-transparent rounded-md shadow-md whitespace-nowrap text-brand-background hover:bg-brand-violet"
+            >
+              {truncateAddress(signer)}
+              <CogIcon className="w-6 h-6 ml-2 -mr-1" aria-hidden="false" />
+            </Menu.Button>
 
             <Transition
               as={Fragment}
@@ -129,39 +142,25 @@ export default function ConnectWallet() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-brand-background ring-1 ring-opacity-5 focus:outline-none">
+              <Menu.Items className="absolute right-0 w-56 origin-top-right rounded-md shadow-lg bg-brand-background ring-1 ring-opacity-5 focus:outline-none">
                 <div className="py-1">
                   <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href="/mint"
-                        className={classNames(
-                          active
-                            ? "bg-brand-light text-brand-background"
-                            : "text-brand-light",
-                          "block px-4 py-2 text-sm"
-                        )}
-                      >
-                        Mint Page
-                      </a>
-                    )}
+                    <MyLink
+                      href="/mint"
+                      className="flex flex-row items-center w-full gap-2 px-4 py-2 text-sm text-left transition-all duration-200 text-brand-light hover:bg-brand-light hover:text-brand-background"
+                    >
+                      Mint Page
+                    </MyLink>
                   </Menu.Item>
                   <Menu.Item>
-                    {({ active }) => (
-                      <button
-                        type="submit"
-                        className={classNames(
-                          active
-                            ? "bg-brand-light text-brand-background"
-                            : "text-brand-light",
-                          "flex flex-row gap-2 items-center w-full text-left px-4 py-2 text-sm"
-                        )}
-                        onClick={() => disconnect()}
-                      >
-                        <LogoutIcon className="h-4 w-4" aria-hidden="true" />
-                        Sign Out
-                      </button>
-                    )}
+                    <button
+                      type="submit"
+                      className="flex flex-row items-center w-full gap-2 px-4 py-2 text-sm text-left transition-all duration-200 text-brand-light hover:bg-brand-light hover:text-brand-background"
+                      onClick={() => disconnect()}
+                    >
+                      <LogoutIcon className="w-5 h-5" aria-hidden="true" />
+                      Sign Out
+                    </button>
                   </Menu.Item>
                 </div>
               </Menu.Items>
@@ -169,14 +168,14 @@ export default function ConnectWallet() {
           </Menu>
         ) : (
           <button
-            className="ml-8 whitespace-nowrap inline-flex mb-1 px-4 py-2 items-center border border-transparent rounded-md shadow-md font-medium text-brand-background bg-white hover:bg-brand-violet transition-all duration-200"
+            className="inline-flex items-center px-4 py-2 mb-1 ml-8 font-medium transition-all duration-200 bg-white border border-transparent rounded-md shadow-md whitespace-nowrap text-brand-background hover:bg-brand-violet"
             onClick={() => connect()}
           >
             Connect
           </button>
         )
       ) : (
-        <span className="ml-8 whitespace-nowrap inline-flex mb-1 px-4 py-2 items-center border border-transparent rounded-md shadow-md font-medium text-brand-background bg-white hover:bg-brand-violet transition-all duration-200">
+        <span className="inline-flex items-center px-4 py-2 mb-1 ml-8 font-medium transition-all duration-200 bg-white border border-transparent rounded-md shadow-md whitespace-nowrap text-brand-background hover:bg-brand-violet">
           Please install metamask
         </span>
       )}

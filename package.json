@@ -6,17 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "moralis:sync": "moralis-admin-cli connect-local-devchain --chain hardhat --moralisSubdomain r6eqfpa57f3r.usemoralis.com --frpcPath ./frp/frpc"
   },
   "dependencies": {
     "@alch/alchemy-web3": "^1.4.2",
     "@coinbase/wallet-sdk": "^3.1.0",
     "@headlessui/react": "^1.6.4",
     "@heroicons/react": "^1.0.6",
-    "@nomiclabs/hardhat-ethers": "^2.0.6",
     "@nomiclabs/hardhat-etherscan": "^3.0.4",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
     "@openzeppelin/contracts": "^4.6.0",
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@walletconnect/web3-provider": "^1.7.8",
     "assert": "^2.0.0",
     "chai": "^4.3.6",
@@ -41,6 +42,7 @@
     "web3uikit": "^0.1.155"
   },
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
     "autoprefixer": "^10.4.7",
     "erc721psi": "^0.6.0",
     "hardhat-deploy": "^0.11.10",
@@ -53,5 +55,13 @@
     "test": "test"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atikocak/NFT-dApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Atikocak/NFT-dApp/issues"
+  },
+  "homepage": "https://github.com/Atikocak/NFT-dApp#readme"
 }

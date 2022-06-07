@@ -1,11 +1,15 @@
+const contractAddresses = require("../minting_dapp/constants/networkMapping.json")
+require("dotenv").config()
+let chainId = process.env.chainId || 31337
+
 const config = {
-    title: "MyBoredApe Website",
-    description: "An example NFT Project landing and minting dApp",
-    contractAddress: "0xf3F9d12CDebD754AC1B3e9760706451F914aA140",
-    presaleMintLimit: 1,
-    maxMintLimit: 2,
-    price: 0.01,
-    adminAddress: ""
+  title: "MyBoredApe Website",
+  description: "An example NFT Project landing and minting dApp",
+  contractAddress: contractAddresses[chainId]["MyBoredApe"][0],
+  presaleMintLimit: 1,
+  maxMintLimit: 2,
+  price: 0.01,
+  adminAddress: ""
 }
 
-module.exports = { config };
+module.exports = { config }

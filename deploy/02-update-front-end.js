@@ -23,7 +23,8 @@ async function updateContractAddresses() {
   )
   if (chainId in contractAddresses) {
     if (
-      !contractAddresses[chainId]["MyBoredApe"].includes(myBoredApe.address)
+      !contractAddresses[chainId]["MyBoredApe"].includes(myBoredApe.address) ||
+      myBoredApe.address === null
     ) {
       contractAddresses[chainId]["MyBoredApe"].push(myBoredApe.address)
     }
