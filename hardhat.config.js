@@ -36,7 +36,16 @@ const REPORT_GAS = process.env.REPORT_GAS || false
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
-    hardhat: {},
+    hardhat: {
+      // If you want to do some forking, uncomment this
+      // forking: {
+      //   url: MAINNET_RPC_URL
+      // }
+      chainId: 31337
+    },
+    localhost: {
+      chainId: 31337
+    },
     rinkeby: {
       url: RINKEBY_RPC_URL,
       accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
