@@ -23,10 +23,14 @@ const POLYGON_MAINNET_RPC_URL =
   process.env.POLYGON_MAINNET_RPC_URL ||
   "https://polygon-mainnet.alchemyapi.io/v2/your-api-key"
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x"
+const BASE_GOERLI_RPC_URL =
+  process.env.BASE_GOERLI_RPC_URL || "https://goerli.base.org"
 // optional
 const MNEMONIC = process.env.MNEMONIC || "your mnemonic"
 
 // Your API key for Etherscan, obtain one at https://etherscan.io/
+const BASESCAN_API_KEY =
+  process.env.BASESCAN_API_KEY || "https://api-goerli.basescan.org/api"
 const ETHERSCAN_API_KEY =
   process.env.ETHERSCAN_API_KEY || "Your etherscan API key"
 const POLYGONSCAN_API_KEY =
@@ -45,6 +49,10 @@ module.exports = {
     },
     localhost: {
       chainId: 31337
+    },
+    base_goerli: {
+      url: BASE_GOERLI_RPC_URL,
+      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : []
     },
     rinkeby: {
       url: RINKEBY_RPC_URL,
@@ -76,8 +84,19 @@ module.exports = {
     apiKey: {
       rinkeby: ETHERSCAN_API_KEY,
       kovan: ETHERSCAN_API_KEY,
-      polygon: POLYGONSCAN_API_KEY
-    }
+      polygon: POLYGONSCAN_API_KEY,
+      base_goerli: "https://api-goerli.basescan.org/api"
+    },
+    customChains: [
+      {
+        network: "base_goerli",
+        chainId: 84531,
+        urls: {
+          apiURL: BASESCAN_API_KEY,
+          browserURL: "https://goerli.basescan.org"
+        }
+      }
+    ]
   },
   gasReporter: {
     enabled: REPORT_GAS,

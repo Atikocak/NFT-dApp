@@ -13,7 +13,7 @@ export default function Roadmap() {
   }, [])
 
   return (
-    <div id="roadmap" className="w-full py-6 scroll-mt-16 bg-brand-mint">
+    <div id="roadmap" className="w-full px-5 py-6 scroll-mt-16 bg-brand-mint">
       <div className="container max-w-3xl mx-auto">
         <div className="flex flex-col items-center">
           <h1 className="text-5xl font-semibold text-brand-silk text-shadow drop-shadow-sm">

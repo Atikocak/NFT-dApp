@@ -44,13 +44,14 @@ async function main() {
       name: "Transfer",
       type: "event"
     },
+    filter: { eq: ["sender", "0x0"] },
     tableName: "Minted",
     sync_historical: true
   }
 
   // let devMintOptions = {
   //   chainId: moralisChainId,
-  //   address: contractAddress,
+  //   address: contractAddress,""
   //   topic: "DevMint(uint64)",
   //   abi: {
   //     inputs: [
