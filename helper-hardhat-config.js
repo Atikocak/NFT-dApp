@@ -37,6 +37,7 @@ const networkConfig = {
 }
 
 const developmentChains = ["hardhat", "localhost"]
+const ZkSyncChains = ["zkSyncMainnet", "hardhat"]
 const VERIFICATION_BLOCK_CONFIRMATIONS = 6
 const frontEndContractsFile = "../minting_dapp/constants/networkMapping.json"
 const frontEndAbiLocation = "../minting_dapp/constants/"

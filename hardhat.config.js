@@ -25,6 +25,7 @@ const POLYGON_MAINNET_RPC_URL =
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x"
 const BASE_GOERLI_RPC_URL =
   process.env.BASE_GOERLI_RPC_URL || "https://goerli.base.org"
+const ZK_SYNC_MAINNET_RPC_URL = "https://zksync2-mainnet.zksync.io"
 // optional
 const MNEMONIC = process.env.MNEMONIC || "your mnemonic"
 
@@ -77,6 +78,11 @@ module.exports = {
       accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
       saveDeployments: true,
       chainId: 137
+    },
+    zkSyncMainnet: {
+      url: ZK_SYNC_MAINNET_RPC_URL,
+      ethNetwork: "mainnet",
+      zksync: true
     }
   },
   etherscan: {

@@ -11,6 +11,7 @@ const {
 const baseUri = "ipfs://QmXZYx6jmchu5da85bipaMUXRrfTBurd6NrxYRt8Fj7LYe/"
 const proxyRegistryAddressRinkeby = "0xf57b2c51ded3a29e6891aba85459d600256cf317"
 const proxyRegistryAddressMainnet = "0xa5409ec958c83c3f309868babaca7c86dcb077c1"
+const proxyRegistryAddressZkSync = "0x2505c01e6e11ed39b3fce21d99ea4c8565eb6dae"
 const maxSupply = 100
 const amountForDevs = 10
 
@@ -30,7 +31,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   const arguments = [
     baseUri,
     root,
-    proxyRegistryAddressRinkeby,
+    proxyRegistryAddressZkSync,
     maxSupply,
     amountForDevs
   ]
